@@ -1,0 +1,193 @@
+USE [master]
+GO
+
+CREATE DATABASE [MIFINCA]
+ GO
+USE [MIFINCA]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Animales](
+	[Id_animal] [int] NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Id_Finca] [int] NULL,
+	[Id_Raza] [int] NULL,
+	[Fecha_Nacimiento] [date] NULL,
+	[Sexo] [int] NULL,
+	[Id_Madre] [int] NULL,
+	[Id_Padre] [int] NULL,
+ CONSTRAINT [PK_Animales] PRIMARY KEY CLUSTERED 
+(
+	[Id_animal] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Duenno](
+	[Identificacion] [int] NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Primer_Apellido] [varchar](255) NULL,
+	[Segundo_Apellido] [varchar](255) NULL,
+	[Correo_Electronico] [varchar](50) NULL,
+	[Telefono_Celular] [int] NULL,
+	[Id_Finca] [int] NOT NULL,
+ CONSTRAINT [PK_Duenno] PRIMARY KEY CLUSTERED 
+(
+	[Identificacion] ASC,
+	[Id_Finca] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Empleado](
+	[Identificacion] [int] NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Primer_Apellido] [varchar](255) NULL,
+	[Segundo_Apellido] [varchar](255) NULL,
+	[Salario] [decimal](18, 0) NULL,
+	[Usuario] [varchar](50) NOT NULL,
+	[Contrasena] [varchar](50) NOT NULL,
+	[Estado] [int] NOT NULL,
+ CONSTRAINT [PK_Empleado] PRIMARY KEY CLUSTERED 
+(
+	[Identificacion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Finca](
+	[Id_Finca] [int] NOT NULL,
+	[Nombre] [varchar](50) NOT NULL,
+	[Tamanno] [int] NOT NULL,
+	[Direccion] [varchar](255) NOT NULL,
+	[Telefono] [int] NULL,
+ CONSTRAINT [PK_Finca] PRIMARY KEY CLUSTERED 
+(
+	[Id_Finca] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Raza](
+	[Id_Raza] [int] NOT NULL,
+	[Descripcion] [varchar](50) NULL,
+ CONSTRAINT [PK_Raza] PRIMARY KEY CLUSTERED 
+(
+	[Id_Raza] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Tramientos](
+	[Id_animal] [int] NOT NULL,
+	[Fec_tratamiento] [date] NULL,
+	[Diagnostico] [varchar](50) NULL,
+	[Medicamento] [varchar](50) NULL,
+	[Dias_tratamiento] [int] NULL,
+	[Observaciones] [varchar](255) NULL,
+ CONSTRAINT [PK_Tramientos] PRIMARY KEY CLUSTERED 
+(
+	[Id_animal] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Vacuna_Animal](
+	[Id_animal] [int] NOT NULL,
+	[Id_vacuna] [int] NOT NULL,
+	[Fec_vacuna] [date] NOT NULL,
+	[Enfermedad] [varchar](50) NULL,
+	[Observaciones] [varchar](255) NULL,
+ CONSTRAINT [PK_Vacuna_Animal] PRIMARY KEY CLUSTERED 
+(
+	[Id_animal] ASC,
+	[Id_vacuna] ASC,
+	[Fec_vacuna] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Vacunas](
+	[Id_vacuna] [int] NOT NULL,
+	[Descripcion] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Vacunas] PRIMARY KEY CLUSTERED 
+(
+	[Id_vacuna] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Animales]  WITH CHECK ADD  CONSTRAINT [FK_Animales_Animales] FOREIGN KEY([Id_Madre])
+REFERENCES [dbo].[Animales] ([Id_animal])
+GO
+ALTER TABLE [dbo].[Animales] CHECK CONSTRAINT [FK_Animales_Animales]
+GO
+ALTER TABLE [dbo].[Animales]  WITH CHECK ADD  CONSTRAINT [FK_Animales_Animales1] FOREIGN KEY([Id_Padre])
+REFERENCES [dbo].[Animales] ([Id_animal])
+GO
+ALTER TABLE [dbo].[Animales] CHECK CONSTRAINT [FK_Animales_Animales1]
+GO
+ALTER TABLE [dbo].[Animales]  WITH CHECK ADD  CONSTRAINT [FK_Animales_Finca] FOREIGN KEY([Id_Finca])
+REFERENCES [dbo].[Finca] ([Id_Finca])
+GO
+ALTER TABLE [dbo].[Animales] CHECK CONSTRAINT [FK_Animales_Finca]
+GO
+ALTER TABLE [dbo].[Animales]  WITH CHECK ADD  CONSTRAINT [FK_Animales_Raza] FOREIGN KEY([Id_Raza])
+REFERENCES [dbo].[Raza] ([Id_Raza])
+GO
+ALTER TABLE [dbo].[Animales] CHECK CONSTRAINT [FK_Animales_Raza]
+GO
+ALTER TABLE [dbo].[Duenno]  WITH CHECK ADD  CONSTRAINT [FK_Duenno_Finca] FOREIGN KEY([Id_Finca])
+REFERENCES [dbo].[Finca] ([Id_Finca])
+GO
+ALTER TABLE [dbo].[Duenno] CHECK CONSTRAINT [FK_Duenno_Finca]
+GO
+ALTER TABLE [dbo].[Tramientos]  WITH CHECK ADD  CONSTRAINT [FK_Tramientos_Animales] FOREIGN KEY([Id_animal])
+REFERENCES [dbo].[Animales] ([Id_animal])
+GO
+ALTER TABLE [dbo].[Tramientos] CHECK CONSTRAINT [FK_Tramientos_Animales]
+GO
+ALTER TABLE [dbo].[Vacuna_Animal]  WITH CHECK ADD  CONSTRAINT [FK_Vacuna_Animal_Animales] FOREIGN KEY([Id_animal])
+REFERENCES [dbo].[Animales] ([Id_animal])
+GO
+ALTER TABLE [dbo].[Vacuna_Animal] CHECK CONSTRAINT [FK_Vacuna_Animal_Animales]
+GO
+ALTER TABLE [dbo].[Vacuna_Animal]  WITH CHECK ADD  CONSTRAINT [FK_Vacuna_Animal_Vacunas] FOREIGN KEY([Id_vacuna])
+REFERENCES [dbo].[Vacunas] ([Id_vacuna])
+GO
+ALTER TABLE [dbo].[Vacuna_Animal] CHECK CONSTRAINT [FK_Vacuna_Animal_Vacunas]
+GO
+USE [master]
+GO
+ALTER DATABASE [MIFINCA] SET  READ_WRITE 
+GO

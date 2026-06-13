@@ -1,0 +1,17 @@
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\bin\Debug\Principal.exe.config
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\bin\Debug\Principal.exe
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\bin\Debug\Principal.pdb
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\bin\Debug\Cliente.exe
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\bin\Debug\Servidor.exe
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\bin\Debug\Cliente.pdb
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\bin\Debug\Cliente.exe.config
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\bin\Debug\Servidor.pdb
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\bin\Debug\Servidor.exe.config
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\obj\Debug\Principal.Principal_MenuPrincipal.resources
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\obj\Debug\Principal.csproj.CopyComplete
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\obj\Debug\Principal.exe
+C:\Users\Admin\Desktop\DayronChaves_Proyecto\DayronChaves_Proyecto\Principal\obj\Debug\Principal.pdb

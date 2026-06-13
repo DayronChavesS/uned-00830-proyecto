@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente", "Cliente\Cliente.csproj", "{8E5AFA51-5E83-4907-99ED-C5FABF522035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servidor", "Servidor\Servidor.csproj", "{703E9FB6-8904-49EF-8042-3E64A2E27C75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Principal", "Principal\Principal.csproj", "{939C3703-346A-480C-9E35-19E186D72AB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E5AFA51-5E83-4907-99ED-C5FABF522035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5AFA51-5E83-4907-99ED-C5FABF522035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5AFA51-5E83-4907-99ED-C5FABF522035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5AFA51-5E83-4907-99ED-C5FABF522035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{703E9FB6-8904-49EF-8042-3E64A2E27C75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703E9FB6-8904-49EF-8042-3E64A2E27C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703E9FB6-8904-49EF-8042-3E64A2E27C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703E9FB6-8904-49EF-8042-3E64A2E27C75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939C3703-346A-480C-9E35-19E186D72AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939C3703-346A-480C-9E35-19E186D72AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939C3703-346A-480C-9E35-19E186D72AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939C3703-346A-480C-9E35-19E186D72AB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C833DC9C-5045-4764-AA25-05050B3D14D9}
+	EndGlobalSection
+EndGlobal
